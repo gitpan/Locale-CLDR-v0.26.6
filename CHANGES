@@ -1,0 +1,60 @@
+Revision history for Locale-CLDR
+All dates are in ISO 8601 Format
+
+0.0.1 2014-03-29
+	- Released to CPAN
+
+0.0.2 2014-04-12
+	- This version now passes all tests on CPAN
+
+0.0.3 201-04-12
+	- This corrects a mistake in the upload of the previous version
+
+0.0.4 2014-04-12
+	- Fix bug causing some of the data files not to be correctly generated
+	- Fixed count attributes for currency fall back
+	- Fixed test scripts to match new corrected data
+	
+0.0.5 2014-04-19
+	- Added Documentation for undocumented public functions
+
+0.25.0 2014-04-26
+	- Changed revision format to be API.CLDR Revision.Release
+	- Added Unicode extensions to the locale codes for numbers
+		and calendars
+	- Added tests for the extension code
+	- Added documentation for the extension code
+	
+0.25.1 2014-05-18
+	- Updates and fixes to documentation
+	- Change week data code so we no longer return a hash of all the data but
+		now take a territory id and return the data specifically for that territory
+	- Fixed up week data and calendar preferences to use territory containment 
+	- Added currency data to the number formatting code
+	- Added tests for the above changes
+	- Allow for use with Perl 5.10 and above
+	- Fixed tests to handle Perl 5.10 and above
+	
+0.25.2 2014-06-02
+	- Added Pluralisation rules
+	- Added warning when falling back to the likely territory when getting a default currency.
+	- Added plural range code
+    - Added tests for above
+
+0.25.3 2014-06-12
+	- Rule Based Number Formatting
+
+0.25.4 2014-06-20
+	- Fixes to bugs found in the rule base number formatting
+
+0.26.0
+	- Broken release
+
+0.26.1
+	- Broken release
+
+0.26.2 2014-11-29
+	- CLDR version 26 release.
+	- Break data into bundles so you don't have to download all the data
+	- Fix some spelling mistakes in the documentation
+	- Fix bugs in the Rule based number formatting
