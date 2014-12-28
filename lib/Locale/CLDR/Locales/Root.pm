@@ -6,7 +6,7 @@ Locale::CLDR::Locales::Root - Package for language Root
 
 package Locale::CLDR::Locales::Root;
 # This file auto generated from Data\common\main\root.xml
-#	on Sat 27 Dec  2:26:17 am GMT
+#	on Sun 28 Dec 10:50:41 am GMT
 # XML file generated 2014-08-01 12:07:43 -0500 (Fri, 01 Aug 2014)
 
 use version;
@@ -5442,13 +5442,6 @@ has 'day_period_data' => (
 		my ($self, $type, $time) = @_;
 		SWITCH:
 		for ($type) {
-			if ($_ eq 'islamic-tbla') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
 			if ($_ eq 'coptic') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
@@ -5463,7 +5456,49 @@ has 'day_period_data' => (
 					&& $time < 2400;
 			last SWITCH;
 			}
+			if ($_ eq 'ethiopic-amete-alem') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
+			if ($_ eq 'chinese') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
+			if ($_ eq 'islamic') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
+			if ($_ eq 'buddhist') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
+			if ($_ eq 'indian') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
 			if ($_ eq 'japanese') {
+				return 'am' if $time >= 000
+					&& $time < 1200;
+				return 'pm' if $time >= 1200
+					&& $time < 2400;
+			last SWITCH;
+			}
+			if ($_ eq 'islamic-tbla') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
 				return 'pm' if $time >= 1200
@@ -5491,35 +5526,7 @@ has 'day_period_data' => (
 					&& $time < 2400;
 			last SWITCH;
 			}
-			if ($_ eq 'islamic') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
-			if ($_ eq 'dangi') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
-			if ($_ eq 'indian') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
-			if ($_ eq 'islamic-civil') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
-			if ($_ eq 'islamic-rgsa') {
+			if ($_ eq 'gregorian') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
 				return 'pm' if $time >= 1200
@@ -5533,21 +5540,14 @@ has 'day_period_data' => (
 					&& $time < 2400;
 			last SWITCH;
 			}
-			if ($_ eq 'chinese') {
+			if ($_ eq 'islamic-rgsa') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
 				return 'pm' if $time >= 1200
 					&& $time < 2400;
 			last SWITCH;
 			}
-			if ($_ eq 'buddhist') {
-				return 'am' if $time >= 000
-					&& $time < 1200;
-				return 'pm' if $time >= 1200
-					&& $time < 2400;
-			last SWITCH;
-			}
-			if ($_ eq 'gregorian') {
+			if ($_ eq 'dangi') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
 				return 'pm' if $time >= 1200
@@ -5561,7 +5561,7 @@ has 'day_period_data' => (
 					&& $time < 2400;
 			last SWITCH;
 			}
-			if ($_ eq 'ethiopic-amete-alem') {
+			if ($_ eq 'islamic-civil') {
 				return 'am' if $time >= 000
 					&& $time < 1200;
 				return 'pm' if $time >= 1200
@@ -5605,12 +5605,12 @@ has 'day_periods' => (
 				},
 				'wide' => {
 					'noon' => q{noon},
-					'am' => q{AM},
 					'pm' => q{PM},
+					'am' => q{AM},
 				},
 				'narrow' => {
-					'am' => q{a},
 					'noon' => q{n},
+					'am' => q{a},
 					'pm' => q{p},
 				},
 			},
@@ -6494,32 +6494,16 @@ has 'datetime_formats_available_formats' => (
 	isa			=> 'HashRef',
 	init_arg	=> undef,
 	default		=> sub { {
-		'islamic-civil' => {
-			'alias' => q{islamic},
-		},
-		'islamic-rgsa' => {
-			'alias' => q{islamic},
-		},
-		'indian' => {
-			'alias' => q{generic},
-		},
-		'dangi' => {
-			'alias' => q{chinese},
-		},
 		'islamic' => {
 			'alias' => q{generic},
 		},
-		'generic' => {
+		'chinese' => {
 			E => q{ccc},
-			EHm => q{E HH:mm},
-			EHms => q{E HH:mm:ss},
 			Ed => q{d, E},
-			Ehm => q{E h:mm a},
-			Ehms => q{E h:mm:ss a},
-			Gy => q{G y},
-			GyMMM => q{G y MMM},
-			GyMMMEd => q{G y MMM d, E},
-			GyMMMd => q{G y MMM d},
+			Gy => q{U},
+			GyMMM => q{U MMM},
+			GyMMMEd => q{U MMM d, E},
+			GyMMMd => q{U MMM d},
 			H => q{HH},
 			Hm => q{HH:mm},
 			Hms => q{HH:mm:ss},
@@ -6534,21 +6518,40 @@ has 'datetime_formats_available_formats' => (
 			hm => q{h:mm a},
 			hms => q{h:mm:ss a},
 			ms => q{mm:ss},
-			y => q{G y},
-			yyyy => q{G y},
-			yyyyM => q{GGGGG y-MM},
-			yyyyMEd => q{GGGGG y-MM-dd, E},
-			yyyyMMM => q{G y MMM},
-			yyyyMMMEd => q{G y MMM d, E},
-			yyyyMMMd => q{G y MMM d},
-			yyyyMd => q{GGGGG y-MM-dd},
-			yyyyQQQ => q{G y QQQ},
-			yyyyQQQQ => q{G y QQQQ},
+			y => q{U},
+			yMd => q{y-MM-dd},
+			yyyy => q{U},
+			yyyyM => q{y-MM},
+			yyyyMEd => q{y-MM-dd, E},
+			yyyyMMM => q{U MMM},
+			yyyyMMMEd => q{U MMM d, E},
+			yyyyMMMd => q{U MMM d},
+			yyyyMd => q{y-MM-dd},
+			yyyyQQQ => q{U QQQ},
+			yyyyQQQQ => q{U QQQQ},
+		},
+		'coptic' => {
+			'alias' => q{generic},
+		},
+		'islamic-umalqura' => {
+			'alias' => q{islamic},
 		},
 		'ethiopic-amete-alem' => {
 			'alias' => q{ethiopic},
 		},
-		'ethiopic' => {
+		'hebrew' => {
+			'alias' => q{generic},
+		},
+		'islamic-tbla' => {
+			'alias' => q{islamic},
+		},
+		'buddhist' => {
+			'alias' => q{generic},
+		},
+		'japanese' => {
+			'alias' => q{generic},
+		},
+		'indian' => {
 			'alias' => q{generic},
 		},
 		'gregorian' => {
@@ -6586,16 +6589,23 @@ has 'datetime_formats_available_formats' => (
 			yQQQ => q{y QQQ},
 			yQQQQ => q{y QQQQ},
 		},
-		'buddhist' => {
+		'persian' => {
 			'alias' => q{generic},
 		},
-		'chinese' => {
+		'islamic-rgsa' => {
+			'alias' => q{islamic},
+		},
+		'generic' => {
 			E => q{ccc},
+			EHm => q{E HH:mm},
+			EHms => q{E HH:mm:ss},
 			Ed => q{d, E},
-			Gy => q{U},
-			GyMMM => q{U MMM},
-			GyMMMEd => q{U MMM d, E},
-			GyMMMd => q{U MMM d},
+			Ehm => q{E h:mm a},
+			Ehms => q{E h:mm:ss a},
+			Gy => q{G y},
+			GyMMM => q{G y MMM},
+			GyMMMEd => q{G y MMM d, E},
+			GyMMMd => q{G y MMM d},
 			H => q{HH},
 			Hm => q{HH:mm},
 			Hms => q{HH:mm:ss},
@@ -6610,38 +6620,28 @@ has 'datetime_formats_available_formats' => (
 			hm => q{h:mm a},
 			hms => q{h:mm:ss a},
 			ms => q{mm:ss},
-			y => q{U},
-			yMd => q{y-MM-dd},
-			yyyy => q{U},
-			yyyyM => q{y-MM},
-			yyyyMEd => q{y-MM-dd, E},
-			yyyyMMM => q{U MMM},
-			yyyyMMMEd => q{U MMM d, E},
-			yyyyMMMd => q{U MMM d},
-			yyyyMd => q{y-MM-dd},
-			yyyyQQQ => q{U QQQ},
-			yyyyQQQQ => q{U QQQQ},
-		},
-		'persian' => {
-			'alias' => q{generic},
-		},
-		'islamic-tbla' => {
-			'alias' => q{islamic},
+			y => q{G y},
+			yyyy => q{G y},
+			yyyyM => q{GGGGG y-MM},
+			yyyyMEd => q{GGGGG y-MM-dd, E},
+			yyyyMMM => q{G y MMM},
+			yyyyMMMEd => q{G y MMM d, E},
+			yyyyMMMd => q{G y MMM d},
+			yyyyMd => q{GGGGG y-MM-dd},
+			yyyyQQQ => q{G y QQQ},
+			yyyyQQQQ => q{G y QQQQ},
 		},
 		'roc' => {
 			'alias' => q{generic},
 		},
-		'hebrew' => {
-			'alias' => q{generic},
-		},
-		'japanese' => {
-			'alias' => q{generic},
-		},
-		'coptic' => {
-			'alias' => q{generic},
-		},
-		'islamic-umalqura' => {
+		'islamic-civil' => {
 			'alias' => q{islamic},
+		},
+		'ethiopic' => {
+			'alias' => q{generic},
+		},
+		'dangi' => {
+			'alias' => q{chinese},
 		},
 	} },
 );
@@ -6651,54 +6651,7 @@ has 'datetime_formats_append_item' => (
 	isa			=> 'HashRef',
 	init_arg	=> undef,
 	default		=> sub { {
-		'islamic-civil' => {
-			'alias' => q{islamic},
-		},
-		'islamic-rgsa' => {
-			'alias' => q{islamic},
-		},
-		'indian' => {
-			'alias' => q{generic},
-		},
-		'dangi' => {
-			'alias' => q{chinese},
-		},
 		'islamic' => {
-			'alias' => q{generic},
-		},
-		'generic' => {
-			'Day' => '{0} ({2}: {1})',
-			'Day-Of-Week' => '{0} {1}',
-			'Era' => '{1} {0}',
-			'Hour' => '{0} ({2}: {1})',
-			'Minute' => '{0} ({2}: {1})',
-			'Month' => '{0} ({2}: {1})',
-			'Quarter' => '{0} ({2}: {1})',
-			'Second' => '{0} ({2}: {1})',
-			'Timezone' => '{0} {1}',
-			'Week' => '{0} ({2}: {1})',
-			'Year' => '{1} {0}',
-		},
-		'ethiopic-amete-alem' => {
-			'alias' => q{ethiopic},
-		},
-		'ethiopic' => {
-			'alias' => q{generic},
-		},
-		'gregorian' => {
-			'Day' => '{0} ({2}: {1})',
-			'Day-Of-Week' => '{0} {1}',
-			'Era' => '{1} {0}',
-			'Hour' => '{0} ({2}: {1})',
-			'Minute' => '{0} ({2}: {1})',
-			'Month' => '{0} ({2}: {1})',
-			'Quarter' => '{0} ({2}: {1})',
-			'Second' => '{0} ({2}: {1})',
-			'Timezone' => '{0} {1}',
-			'Week' => '{0} ({2}: {1})',
-			'Year' => '{1} {0}',
-		},
-		'buddhist' => {
 			'alias' => q{generic},
 		},
 		'chinese' => {
@@ -6714,26 +6667,73 @@ has 'datetime_formats_append_item' => (
 			'Week' => '{0} ({2}: {1})',
 			'Year' => '{1} {0}',
 		},
-		'persian' => {
-			'alias' => q{generic},
-		},
-		'islamic-tbla' => {
-			'alias' => q{islamic},
-		},
-		'roc' => {
-			'alias' => q{generic},
-		},
-		'hebrew' => {
-			'alias' => q{generic},
-		},
-		'japanese' => {
-			'alias' => q{generic},
-		},
 		'coptic' => {
 			'alias' => q{generic},
 		},
 		'islamic-umalqura' => {
 			'alias' => q{islamic},
+		},
+		'ethiopic-amete-alem' => {
+			'alias' => q{ethiopic},
+		},
+		'hebrew' => {
+			'alias' => q{generic},
+		},
+		'islamic-tbla' => {
+			'alias' => q{islamic},
+		},
+		'buddhist' => {
+			'alias' => q{generic},
+		},
+		'japanese' => {
+			'alias' => q{generic},
+		},
+		'indian' => {
+			'alias' => q{generic},
+		},
+		'gregorian' => {
+			'Day' => '{0} ({2}: {1})',
+			'Day-Of-Week' => '{0} {1}',
+			'Era' => '{1} {0}',
+			'Hour' => '{0} ({2}: {1})',
+			'Minute' => '{0} ({2}: {1})',
+			'Month' => '{0} ({2}: {1})',
+			'Quarter' => '{0} ({2}: {1})',
+			'Second' => '{0} ({2}: {1})',
+			'Timezone' => '{0} {1}',
+			'Week' => '{0} ({2}: {1})',
+			'Year' => '{1} {0}',
+		},
+		'persian' => {
+			'alias' => q{generic},
+		},
+		'islamic-rgsa' => {
+			'alias' => q{islamic},
+		},
+		'generic' => {
+			'Day' => '{0} ({2}: {1})',
+			'Day-Of-Week' => '{0} {1}',
+			'Era' => '{1} {0}',
+			'Hour' => '{0} ({2}: {1})',
+			'Minute' => '{0} ({2}: {1})',
+			'Month' => '{0} ({2}: {1})',
+			'Quarter' => '{0} ({2}: {1})',
+			'Second' => '{0} ({2}: {1})',
+			'Timezone' => '{0} {1}',
+			'Week' => '{0} ({2}: {1})',
+			'Year' => '{1} {0}',
+		},
+		'roc' => {
+			'alias' => q{generic},
+		},
+		'islamic-civil' => {
+			'alias' => q{islamic},
+		},
+		'ethiopic' => {
+			'alias' => q{generic},
+		},
+		'dangi' => {
+			'alias' => q{chinese},
 		},
 	} },
 );
@@ -6743,218 +6743,7 @@ has 'datetime_formats_interval' => (
 	isa			=> 'HashRef',
 	init_arg	=> undef,
 	default		=> sub { {
-		'islamic-civil' => {
-			'alias' => q{islamic},
-		},
-		'islamic-rgsa' => {
-			'alias' => q{islamic},
-		},
-		'indian' => {
-			'alias' => q{generic},
-		},
-		'dangi' => {
-			'alias' => q{chinese},
-		},
 		'islamic' => {
-			'alias' => q{generic},
-		},
-		'generic' => {
-			H => {
-				H => q{HH–HH},
-			},
-			Hm => {
-				H => q{HH:mm–HH:mm},
-				m => q{HH:mm–HH:mm},
-			},
-			Hmv => {
-				H => q{HH:mm–HH:mm v},
-				m => q{HH:mm–HH:mm v},
-			},
-			Hv => {
-				H => q{HH–HH v},
-			},
-			M => {
-				M => q{MM–MM},
-			},
-			MEd => {
-				M => q{MM-dd, E – MM-dd, E},
-				d => q{MM-dd, E – MM-dd, E},
-			},
-			MMM => {
-				M => q{LLL–LLL},
-			},
-			MMMEd => {
-				M => q{MMM d, E – MMM d, E},
-				d => q{MMM d, E – MMM d, E},
-			},
-			MMMd => {
-				M => q{MMM d – MMM d},
-				d => q{MMM d–d},
-			},
-			Md => {
-				M => q{MM-dd – MM-dd},
-				d => q{MM-dd – MM-dd},
-			},
-			d => {
-				d => q{d–d},
-			},
-			fallback => '{0} – {1}',
-			h => {
-				a => q{h a – h a},
-				h => q{h–h a},
-			},
-			hm => {
-				a => q{h:mm a – h:mm a},
-				h => q{h:mm–h:mm a},
-				m => q{h:mm–h:mm a},
-			},
-			hmv => {
-				a => q{h:mm a – h:mm a v},
-				h => q{h:mm–h:mm a v},
-				m => q{h:mm–h:mm a v},
-			},
-			hv => {
-				a => q{h a – h a v},
-				h => q{h–h a v},
-			},
-			y => {
-				y => q{G y–y},
-			},
-			yM => {
-				M => q{GGGGG y-MM – y-MM},
-				y => q{GGGGG y-MM – y-MM},
-			},
-			yMEd => {
-				M => q{GGGGG y-MM-dd, E – y-MM-dd, E},
-				d => q{GGGGG y-MM-dd, E – y-MM-dd, E},
-				y => q{GGGGG y-MM-dd, E – y-MM-dd, E},
-			},
-			yMMM => {
-				M => q{G y MMM–MMM},
-				y => q{G y MMM – y MMM},
-			},
-			yMMMEd => {
-				M => q{G y MMM d, E – MMM d, E},
-				d => q{G y MMM d, E – MMM d, E},
-				y => q{G y MMM d, E – y MMM d, E},
-			},
-			yMMMM => {
-				M => q{G y MMMM–MMMM},
-				y => q{G y MMMM – y MMMM},
-			},
-			yMMMd => {
-				M => q{G y MMM d – MMM d},
-				d => q{G y MMM d–d},
-				y => q{G y MMM d – y MMM d},
-			},
-			yMd => {
-				M => q{GGGGG y-MM-dd – y-MM-dd},
-				d => q{GGGGG y-MM-dd – y-MM-dd},
-				y => q{GGGGG y-MM-dd – y-MM-dd},
-			},
-		},
-		'ethiopic-amete-alem' => {
-			'alias' => q{ethiopic},
-		},
-		'ethiopic' => {
-			'alias' => q{generic},
-		},
-		'gregorian' => {
-			H => {
-				H => q{HH–HH},
-			},
-			Hm => {
-				H => q{HH:mm–HH:mm},
-				m => q{HH:mm–HH:mm},
-			},
-			Hmv => {
-				H => q{HH:mm–HH:mm v},
-				m => q{HH:mm–HH:mm v},
-			},
-			Hv => {
-				H => q{HH–HH v},
-			},
-			M => {
-				M => q{MM–MM},
-			},
-			MEd => {
-				M => q{MM-dd, E – MM-dd, E},
-				d => q{MM-dd, E – MM-dd, E},
-			},
-			MMM => {
-				M => q{LLL–LLL},
-			},
-			MMMEd => {
-				M => q{MMM d, E – MMM d, E},
-				d => q{MMM d, E – MMM d, E},
-			},
-			MMMd => {
-				M => q{MMM d – MMM d},
-				d => q{MMM d–d},
-			},
-			Md => {
-				M => q{MM-dd – MM-dd},
-				d => q{MM-dd – MM-dd},
-			},
-			d => {
-				d => q{d–d},
-			},
-			fallback => '{0} – {1}',
-			h => {
-				a => q{h a – h a},
-				h => q{h–h a},
-			},
-			hm => {
-				a => q{h:mm a – h:mm a},
-				h => q{h:mm–h:mm a},
-				m => q{h:mm–h:mm a},
-			},
-			hmv => {
-				a => q{h:mm a – h:mm a v},
-				h => q{h:mm–h:mm a v},
-				m => q{h:mm–h:mm a v},
-			},
-			hv => {
-				a => q{h a – h a v},
-				h => q{h–h a v},
-			},
-			y => {
-				y => q{y–y},
-			},
-			yM => {
-				M => q{y-MM – y-MM},
-				y => q{y-MM – y-MM},
-			},
-			yMEd => {
-				M => q{y-MM-dd, E – y-MM-dd, E},
-				d => q{y-MM-dd, E – y-MM-dd, E},
-				y => q{y-MM-dd, E – y-MM-dd, E},
-			},
-			yMMM => {
-				M => q{y MMM–MMM},
-				y => q{y MMM – y MMM},
-			},
-			yMMMEd => {
-				M => q{y MMM d, E – MMM d, E},
-				d => q{y MMM d, E – MMM d, E},
-				y => q{y MMM d, E – y MMM d, E},
-			},
-			yMMMM => {
-				M => q{y MMMM–MMMM},
-				y => q{y MMMM – y MMMM},
-			},
-			yMMMd => {
-				M => q{y MMM d – MMM d},
-				d => q{y MMM d–d},
-				y => q{y MMM d – y MMM d},
-			},
-			yMd => {
-				M => q{y-MM-dd – y-MM-dd},
-				d => q{y-MM-dd – y-MM-dd},
-				y => q{y-MM-dd – y-MM-dd},
-			},
-		},
-		'buddhist' => {
 			'alias' => q{generic},
 		},
 		'chinese' => {
@@ -7052,26 +6841,237 @@ has 'datetime_formats_interval' => (
 				y => q{y-MM-dd – y-MM-dd},
 			},
 		},
-		'persian' => {
-			'alias' => q{generic},
-		},
-		'islamic-tbla' => {
-			'alias' => q{islamic},
-		},
-		'roc' => {
-			'alias' => q{generic},
-		},
-		'hebrew' => {
-			'alias' => q{generic},
-		},
-		'japanese' => {
-			'alias' => q{generic},
-		},
 		'coptic' => {
 			'alias' => q{generic},
 		},
 		'islamic-umalqura' => {
 			'alias' => q{islamic},
+		},
+		'ethiopic-amete-alem' => {
+			'alias' => q{ethiopic},
+		},
+		'hebrew' => {
+			'alias' => q{generic},
+		},
+		'islamic-tbla' => {
+			'alias' => q{islamic},
+		},
+		'buddhist' => {
+			'alias' => q{generic},
+		},
+		'japanese' => {
+			'alias' => q{generic},
+		},
+		'indian' => {
+			'alias' => q{generic},
+		},
+		'gregorian' => {
+			H => {
+				H => q{HH–HH},
+			},
+			Hm => {
+				H => q{HH:mm–HH:mm},
+				m => q{HH:mm–HH:mm},
+			},
+			Hmv => {
+				H => q{HH:mm–HH:mm v},
+				m => q{HH:mm–HH:mm v},
+			},
+			Hv => {
+				H => q{HH–HH v},
+			},
+			M => {
+				M => q{MM–MM},
+			},
+			MEd => {
+				M => q{MM-dd, E – MM-dd, E},
+				d => q{MM-dd, E – MM-dd, E},
+			},
+			MMM => {
+				M => q{LLL–LLL},
+			},
+			MMMEd => {
+				M => q{MMM d, E – MMM d, E},
+				d => q{MMM d, E – MMM d, E},
+			},
+			MMMd => {
+				M => q{MMM d – MMM d},
+				d => q{MMM d–d},
+			},
+			Md => {
+				M => q{MM-dd – MM-dd},
+				d => q{MM-dd – MM-dd},
+			},
+			d => {
+				d => q{d–d},
+			},
+			fallback => '{0} – {1}',
+			h => {
+				a => q{h a – h a},
+				h => q{h–h a},
+			},
+			hm => {
+				a => q{h:mm a – h:mm a},
+				h => q{h:mm–h:mm a},
+				m => q{h:mm–h:mm a},
+			},
+			hmv => {
+				a => q{h:mm a – h:mm a v},
+				h => q{h:mm–h:mm a v},
+				m => q{h:mm–h:mm a v},
+			},
+			hv => {
+				a => q{h a – h a v},
+				h => q{h–h a v},
+			},
+			y => {
+				y => q{y–y},
+			},
+			yM => {
+				M => q{y-MM – y-MM},
+				y => q{y-MM – y-MM},
+			},
+			yMEd => {
+				M => q{y-MM-dd, E – y-MM-dd, E},
+				d => q{y-MM-dd, E – y-MM-dd, E},
+				y => q{y-MM-dd, E – y-MM-dd, E},
+			},
+			yMMM => {
+				M => q{y MMM–MMM},
+				y => q{y MMM – y MMM},
+			},
+			yMMMEd => {
+				M => q{y MMM d, E – MMM d, E},
+				d => q{y MMM d, E – MMM d, E},
+				y => q{y MMM d, E – y MMM d, E},
+			},
+			yMMMM => {
+				M => q{y MMMM–MMMM},
+				y => q{y MMMM – y MMMM},
+			},
+			yMMMd => {
+				M => q{y MMM d – MMM d},
+				d => q{y MMM d–d},
+				y => q{y MMM d – y MMM d},
+			},
+			yMd => {
+				M => q{y-MM-dd – y-MM-dd},
+				d => q{y-MM-dd – y-MM-dd},
+				y => q{y-MM-dd – y-MM-dd},
+			},
+		},
+		'persian' => {
+			'alias' => q{generic},
+		},
+		'islamic-rgsa' => {
+			'alias' => q{islamic},
+		},
+		'generic' => {
+			H => {
+				H => q{HH–HH},
+			},
+			Hm => {
+				H => q{HH:mm–HH:mm},
+				m => q{HH:mm–HH:mm},
+			},
+			Hmv => {
+				H => q{HH:mm–HH:mm v},
+				m => q{HH:mm–HH:mm v},
+			},
+			Hv => {
+				H => q{HH–HH v},
+			},
+			M => {
+				M => q{MM–MM},
+			},
+			MEd => {
+				M => q{MM-dd, E – MM-dd, E},
+				d => q{MM-dd, E – MM-dd, E},
+			},
+			MMM => {
+				M => q{LLL–LLL},
+			},
+			MMMEd => {
+				M => q{MMM d, E – MMM d, E},
+				d => q{MMM d, E – MMM d, E},
+			},
+			MMMd => {
+				M => q{MMM d – MMM d},
+				d => q{MMM d–d},
+			},
+			Md => {
+				M => q{MM-dd – MM-dd},
+				d => q{MM-dd – MM-dd},
+			},
+			d => {
+				d => q{d–d},
+			},
+			fallback => '{0} – {1}',
+			h => {
+				a => q{h a – h a},
+				h => q{h–h a},
+			},
+			hm => {
+				a => q{h:mm a – h:mm a},
+				h => q{h:mm–h:mm a},
+				m => q{h:mm–h:mm a},
+			},
+			hmv => {
+				a => q{h:mm a – h:mm a v},
+				h => q{h:mm–h:mm a v},
+				m => q{h:mm–h:mm a v},
+			},
+			hv => {
+				a => q{h a – h a v},
+				h => q{h–h a v},
+			},
+			y => {
+				y => q{G y–y},
+			},
+			yM => {
+				M => q{GGGGG y-MM – y-MM},
+				y => q{GGGGG y-MM – y-MM},
+			},
+			yMEd => {
+				M => q{GGGGG y-MM-dd, E – y-MM-dd, E},
+				d => q{GGGGG y-MM-dd, E – y-MM-dd, E},
+				y => q{GGGGG y-MM-dd, E – y-MM-dd, E},
+			},
+			yMMM => {
+				M => q{G y MMM–MMM},
+				y => q{G y MMM – y MMM},
+			},
+			yMMMEd => {
+				M => q{G y MMM d, E – MMM d, E},
+				d => q{G y MMM d, E – MMM d, E},
+				y => q{G y MMM d, E – y MMM d, E},
+			},
+			yMMMM => {
+				M => q{G y MMMM–MMMM},
+				y => q{G y MMMM – y MMMM},
+			},
+			yMMMd => {
+				M => q{G y MMM d – MMM d},
+				d => q{G y MMM d–d},
+				y => q{G y MMM d – y MMM d},
+			},
+			yMd => {
+				M => q{GGGGG y-MM-dd – y-MM-dd},
+				d => q{GGGGG y-MM-dd – y-MM-dd},
+				y => q{GGGGG y-MM-dd – y-MM-dd},
+			},
+		},
+		'roc' => {
+			'alias' => q{generic},
+		},
+		'islamic-civil' => {
+			'alias' => q{islamic},
+		},
+		'ethiopic' => {
+			'alias' => q{generic},
+		},
+		'dangi' => {
+			'alias' => q{chinese},
 		},
 	} },
 );

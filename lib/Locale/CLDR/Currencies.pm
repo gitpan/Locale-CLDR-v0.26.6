@@ -1,6 +1,6 @@
 package Locale::CLDR::Currencies;
 # This file auto generated from Data.xml
-#	on Fri 26 Dec 11:27:16 pm GMT
+#	on Sun 28 Dec  7:49:49 am GMT
 # XML file generated 2014-09-11 12:17:53 -0500 (Thu, 11 Sep 2014)
 
 use version;
